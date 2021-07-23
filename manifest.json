@@ -1,28 +1,29 @@
 {
-    "name": "My first extension",
-    "version": "1.0.0",
-    "description": "This is my first extension",
-    "manifest_version": 2,
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-    "content_scripts": [{
-        "matches": ["https://*.youtube.com/*"],
-        "exclude_matches": ["https://*.youtube.com/watch*"],
-        "js": ["content.js"],
-        "run_at": "document_end"
-    }],
-    "permissions": [
-        "bookmarks"
-    ],
-    "icons": {
-        "16": "Group 1 (1).png",
-        "48": "Group 1 (1).png",
-        "128": "Group 1 (1).png"
-    },
-    "browser_action": {
-        "default_title": "My first extension",
-        "default_popup": "popup.html"
-    }
+  "name": "My first extension",
+  "version": "1.0.0",
+  "description": "This is my first extension",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["tabs", "identity"],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhhOZZP9YmWlC2qTAX8s6YoRaQJnh0Y66sw6h9tjWAjQCBXQcDJxhlQfiF836O0Z3JuMhWbqByBDxivx9nRGbm53tvvrTQxcqUVZPA3gFT887SljNB06in7m0SSGWa6ota3FMU0/xNNMS5OzPrcg1WN/PS3na2guTnF0otXd7/qh2Y/+V/MUDbhIoTET7MP7Mk0vkG2KA5WVZEu3QQW7jvUsc4IOQOS1cMgk2RYGyE/ssGcBjlq+3khhfo0kCf9Oxm86xH6A/XaiHjkVHd9I7n8KO+2ssYUejxWjNuIoLBLY9TEE1NkXSGuVtYt9WB2xT5lInzlNDBdqjoVAE1A9KvQIDAQAB",
+  "icons": {
+    "16": "Group 1 (1).png",
+    "48": "Group 1 (1).png",
+    "128": "Group 1 (1).png"
+  },
+  "oauth2": {
+    "client_id": "281690457391-q3po12s2hotjdsgu8f9pcvd17mrjb4tr.apps.googleusercontent.com",
+    "scopes": [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+  },
+  "browser_action": {
+    "default_title": "My first extension",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
 }
